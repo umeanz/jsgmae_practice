@@ -31,18 +31,22 @@ class Cactus{
 
 }
 
-var timer = 0
-var
+var timer = 0 // 
+var cactusArray = [];
 
 function eachFrameWroks(){
     requestAnimationFrame(eachFrameWroks);
     timer++;
     ctx.clearRect(0, 0, canvas.width, canvas.height); //잔상지우기
     
-    if(timer % 120 == 0){}
+    if(timer % 120 == 0){ //creat cactus every 120 and push in array 
     var cactus = new Cactus();
-    cactus.draw();
+    cactusArray.push(cactus);
     }
+    cactusArray.forEach((a)=>{
+        a.x--;
+    a.draw(); //draw all object from array
+    })
 
     dino.draw();
 }
